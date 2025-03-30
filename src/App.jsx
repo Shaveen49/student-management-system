@@ -1,16 +1,16 @@
 import "./App.css";
 import { Route, Router, Routes } from "react-router-dom";
 import Login from "./assets/components/login/Login";
+import Students from "./assets/components/students/Students";
 
 function App() {
   return (
     <div>
-      {/* <Router>
-        <Routes>
-          <Route />
-        </Routes>
-      </Router> */}
-      <Login />
+      {/* <Routes>
+        <Route path="/" element={<Login />} />
+      </Routes> */}
+      {/* <Login />*/}
+      <Students />
     </div>
   );
 }
