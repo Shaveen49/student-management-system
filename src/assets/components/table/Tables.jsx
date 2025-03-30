@@ -52,53 +52,56 @@ function Tables() {
   }, []);
 
   return (
-    <div>
-      <TableContainer component={Paper} sx={{ maxWidth: "900px" }}>
-        <Table sx={{ minWidth: 700 }} aria-label="customized table">
-          <TableHead>
-            <TableRow>
-              <StyledTableCell>Namew</StyledTableCell>
-              <StyledTableCell align="right">Age</StyledTableCell>
-              <StyledTableCell align="right">Address</StyledTableCell>
-              <StyledTableCell align="right">Contact</StyledTableCell>
-              <StyledTableCell align="right">Action</StyledTableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {tableData.map((row) => (
-              <StyledTableRow key={row.id}>
-                <StyledTableCell component="th" scope="row">
-                  {row.student_name}
-                </StyledTableCell>
-                <StyledTableCell align="right">
-                  {row.student_age}
-                </StyledTableCell>
-                <StyledTableCell align="right">
-                  {row.student_address}
-                </StyledTableCell>
-                <StyledTableCell align="right">
-                  {row.student_contact}
-                </StyledTableCell>
-                <StyledTableCell align="right">
-                  <img
-                    src="/images/Edit.png"
-                    alt=""
-                    width="20px"
-                    style={{ cursor: "pointer" }}
-                  />
-                  <img
-                    src="/images/Delete.png"
-                    alt=""
-                    width="20px"
-                    style={{ cursor: "pointer" }}
-                  />
-                </StyledTableCell>
-              </StyledTableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </div>
+    <TableContainer
+      component={Paper}
+      sx={{
+        width: "95%",
+        maxHeight: "400px",
+        border: "1.5px black solid",
+      }}
+    >
+      <Table aria-label="customized table">
+        <TableHead>
+          <TableRow>
+            <StyledTableCell>Name</StyledTableCell>
+            <StyledTableCell align="right">Age</StyledTableCell>
+            <StyledTableCell align="right">Address</StyledTableCell>
+            <StyledTableCell align="right">Contact</StyledTableCell>
+            <StyledTableCell align="right">Action</StyledTableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {tableData.map((row) => (
+            <StyledTableRow key={row.id}>
+              <StyledTableCell component="th" scope="row">
+                {row.student_name}
+              </StyledTableCell>
+              <StyledTableCell align="right">{row.student_age}</StyledTableCell>
+              <StyledTableCell align="right">
+                {row.student_address}
+              </StyledTableCell>
+              <StyledTableCell align="right">
+                {row.student_contact}
+              </StyledTableCell>
+              <StyledTableCell align="right">
+                <img
+                  src="/images/Edit.png"
+                  alt=""
+                  width="20px"
+                  style={{ cursor: "pointer" }}
+                />
+                <img
+                  src="/images/Delete.png"
+                  alt=""
+                  width="20px"
+                  style={{ cursor: "pointer" }}
+                />
+              </StyledTableCell>
+            </StyledTableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
   );
 }
 

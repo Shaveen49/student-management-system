@@ -25,6 +25,7 @@ function Login() {
       const token = response.data.token;
       localStorage.setItem("token", token);
       console.log("token: " + token);
+      window.location.href = "/home";
     } catch (e) {
       console.log(e);
     }

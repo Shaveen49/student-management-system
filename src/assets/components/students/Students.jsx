@@ -5,6 +5,7 @@ import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import axios from "axios";
+import Tables from "../table/Tables";
 
 function Students() {
   const [open, setOpen] = useState(false);
@@ -39,9 +40,15 @@ function Students() {
 
       console.log(response.data);
       setOpen(false);
+      window.location.href = "/home";
     } catch (error) {
       console.error("Error saving student:", error);
     }
+  };
+
+  const logOut = () => {
+    localStorage.removeItem("token");
+    window.location.href = "/";
   };
 
   return (
@@ -146,6 +153,35 @@ function Students() {
           </Box>
         </Modal>
       </div>
+      <div
+        style={{
+          marginTop: "50px",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <Tables />
+      </div>
+
+      <Button
+        onClick={logOut}
+        sx={{
+          fontFamily: "Bebas Neue",
+          height: "25px",
+          borderRadius: "20px",
+          backgroundColor: "#F2BA1D",
+          color: "black",
+          border: "none",
+          "&:hover": {
+            backgroundColor: "#dfa401",
+          },
+          position: "fixed",
+          bottom: 20,
+          left: 20,
+        }}
+      >
+        Log Out
+      </Button>
     </div>
   );
 }

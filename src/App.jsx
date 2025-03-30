@@ -8,11 +8,12 @@ import Tables from "./assets/components/table/Tables";
 function App() {
   return (
     <div>
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<Login />} />
-      </Routes> */}
+        <Route path="/home" element={<Students />} />
+      </Routes>
       {/* <Login />*/}
-      <Students />
+      {/* <Students /> */}
     </div>
   );
 }
